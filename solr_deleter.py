@@ -12,7 +12,7 @@ def create_xml_delete_command(query):
     delete = ET.SubElement(update, 'delete')
     query_element = ET.SubElement(delete, 'query')
     query_element.text = query
-    commit = ET.SubElement(update, 'commit', {'expungeDeletes': 'true'})
+    commit = ET.SubElement(update, 'commit')
     return ET.tostring(update)
 
 def delete_by_query_xml(url, query):
